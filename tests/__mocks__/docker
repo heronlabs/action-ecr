@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Minimal `docker` stub for action-ecr-publish offline tests.
+# Minimal `docker` stub for action-ecr offline tests.
 #
 # Emulates only the docker surface the action uses:
 #   docker tag  SRC DST  -> no-op (exit 0)

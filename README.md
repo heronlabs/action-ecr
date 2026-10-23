@@ -1,4 +1,4 @@
-# 🐳 action-ecr-publish — Build, lint, push to ECR
+# 🐳 action-ecr — Build, lint, push to ECR
 
 [![CI][ci-badge]][ci-url]
 [![License: MIT][license-badge]][license-url]
@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: heronlabs/action-ecr-publish@v3
+      - uses: heronlabs/action-ecr@v3
         with:
           AWS_ROLE_TO_ASSUME: arn:aws:iam::123456789012:role/github-ecr-push
           AWS_REGION: us-east-1
@@ -56,7 +56,7 @@ jobs:
 Omit the `AWS_*` inputs to lint and build without pushing — useful in PR CI.
 
 ```yaml
-- uses: heronlabs/action-ecr-publish@v3
+- uses: heronlabs/action-ecr@v3
   with:
     BUILD_NAME: my-app
     FILE_NAME: Dockerfile
@@ -68,7 +68,7 @@ Omit the `AWS_*` inputs to lint and build without pushing — useful in PR CI.
 Pass `NODE_AUTH_TOKEN` when the build installs private npm packages. The Dockerfile reads it as a BuildKit secret.
 
 ```yaml
-- uses: heronlabs/action-ecr-publish@v3
+- uses: heronlabs/action-ecr@v3
   with:
     AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_ARN }}
     AWS_REGION: ${{ vars.AWS_REGION }}
@@ -215,8 +215,8 @@ Composite action with four steps:
 
 MIT
 
-[ci-badge]: https://github.com/heronlabs/action-ecr-publish/actions/workflows/continuous-integration.yml/badge.svg
-[ci-url]: https://github.com/heronlabs/action-ecr-publish/actions/workflows/continuous-integration.yml
+[ci-badge]: https://github.com/heronlabs/action-ecr/actions/workflows/continuous-integration.yml/badge.svg
+[ci-url]: https://github.com/heronlabs/action-ecr/actions/workflows/continuous-integration.yml
 [license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: ./LICENSE
 [marketplace-badge]: https://img.shields.io/badge/GitHub-Marketplace-green.svg
